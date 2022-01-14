@@ -3,7 +3,7 @@ package br.com.bancoNext.beans;
 public class Endereco {
 	
 	private String logradouro;
-	private int numero;
+	private String numero;
 	private String cep;
 	private String bairro;
 	private String cidade;
@@ -15,7 +15,7 @@ public class Endereco {
 		
 	}
 	
-	public Endereco(String logradouro, int numero, String cep, String bairro, String cidade, String estado) {
+	public Endereco(String logradouro, String numero, String cep, String bairro, String cidade, String estado) {
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.cep = cep;
@@ -31,10 +31,10 @@ public class Endereco {
 	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public String getCep() {
@@ -61,5 +61,6 @@ public class Endereco {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
 	
 }

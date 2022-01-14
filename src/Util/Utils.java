@@ -15,4 +15,13 @@ public class Utils {
 	public void fechaConsole() {
 		ler.close();
 	}
+
+	public boolean validaNum(String num) {
+		try {
+	        Integer.parseInt(num);
+	        return true;
+	    } catch (Exception e) {
+	    	return false;
+	    }
+	}
 }
