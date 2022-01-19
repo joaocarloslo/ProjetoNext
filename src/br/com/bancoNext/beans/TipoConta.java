@@ -2,7 +2,7 @@ package br.com.bancoNext.beans;
 
 public enum TipoConta {
 
-	corrente(1), poupanca(2), ambas(3);
+	corrente(1), poupanca(2);
 
 	private int id;
 

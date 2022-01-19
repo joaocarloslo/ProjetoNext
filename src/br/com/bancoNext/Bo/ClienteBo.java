@@ -21,17 +21,4 @@ public class ClienteBo {
 		cli1.setTipo(TipoCliente.Comum);
 		return cli1;
 	}
-
-	public boolean validaCpf(String cpf) {
-		try {
-			Long.parseLong(cpf);
-			if (cpf.length() == 11) {
-				return true;
-			}
-			return false;
-		} catch (Exception e) {
-			System.out.println("CPF inválido");
-			return false;
-		}
-	}
 }

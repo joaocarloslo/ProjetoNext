@@ -1,26 +1,33 @@
 package Util;
 
 public class Menu {
-	
+
 	public void acessarMenu() {
-				
+		
+		System.out.println("");
+		System.out.println("");
 		System.out.println("|-------------BANCO NEXT--------------|");
 		System.out.println("|                                     |");
-		System.out.println("|       1- CADASTRAR CLIENTE          |");
-		System.out.println("|       2- TRANSFERIR                 |");
-		System.out.println("|       3- DEPOSITAR.                 |");
-		System.out.println("|       4- SALDO                      |");
-		System.out.println("|       5- TAXAS E RENDIMENTOS        |");
-		System.out.println("|       6- CADASTRO CHAVE PIX         |");
-		System.out.println("|       7- TRANSFERÊNCIA PIX          |");
-		System.out.println("|       8- SAIR                       |");
+		System.out.println("|       1-  CADASTRAR CLIENTE         |");
+		System.out.println("|       2-  TRANSFERIR                |");
+		System.out.println("|       3-  DEPOSITAR.                |");
+		System.out.println("|       4-  SALDO                     |");
+		System.out.println("|       5-  TAXAS E RENDIMENTOS       |");
+		System.out.println("|       6-  CADASTRO CHAVE PIX        |");
+		System.out.println("|       7-  TRANSFERÊNCIA PIX         |");
+		System.out.println("|       8-  SOLICITAR CARTÃO CRÉDITO  |");
+		System.out.println("|       9-  SOLICITAR CARTÃO DÉBITO   |");
+		System.out.println("|       10- COMPRA COM DÉBITO         |");
+		System.out.println("|       11- COMPRA COM CRÉDITO        |");
+		System.out.println("|       12- MOSTRAR FATURA            |");
+		System.out.println("|       13- SAIR                      |");
 		System.out.println("|                                     |");
 		System.out.println("|-------------------------------------|");
-		
+
 	}
-	
+
 	public void acessarMenuConta() {
-		
+
 		System.out.println("|--------------BANCO NEXT-------------|");
 		System.out.println("|                                     |");
 		System.out.println("|   QUAL TIPO DE CONTA VOCÊ DESEJA?   |");
@@ -30,11 +37,11 @@ public class Menu {
 		System.out.println("|        3- CORRENTE/POUPANÇA.        |");
 		System.out.println("|                                     |");
 		System.out.println("|-------------------------------------|");
-		
+
 	}
-	
+
 	public void acessarMenuPix() {
-		
+
 		System.out.println("|---------------BANCO NEXT------------|");
 		System.out.println("|                                     |");
 		System.out.println("| QUAL TIPO DE CHAVE PIX VOCÊ DESEJA? |");
@@ -46,5 +53,31 @@ public class Menu {
 		System.out.println("|                                     |");
 		System.out.println("|------------=------------------------|");
 	}
-	
+
+	public void acessarMenuSimNao() {
+
+		System.out.println("|--------------BANCO NEXT-------------|");
+		System.out.println("|                                     |");
+		System.out.println("|        DESEJA CONTINUAR?            |");
+		System.out.println("|                                     |");
+		System.out.println("|        1- SIM.                      |");
+		System.out.println("|        2- NÃO.                      |");
+		System.out.println("|                                     |");
+		System.out.println("|-------------------------------------|");
+
+	}
+
+	public void acessarMenuBandeira() {
+
+		System.out.println("|---------------BANCO NEXT------------|");
+		System.out.println("|                                     |");
+		System.out.println("| QUAL BANDEIRA DE CARTÃO VOCÊ DESEJA?|");
+		System.out.println("|                                     |");
+		System.out.println("|       1- VISA.                      |");
+		System.out.println("|       2- MASTER.                    |");
+		System.out.println("|       3- ELO.                       |");
+		System.out.println("|                                     |");
+		System.out.println("|------------=------------------------|");
+	}
+
 }

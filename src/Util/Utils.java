@@ -24,4 +24,17 @@ public class Utils {
 	    	return false;
 	    }
 	}
+	
+	public boolean validaCpf(String cpf) {
+		try {
+			Long.parseLong(cpf);
+			if (cpf.length() == 11) {
+				return true;
+			}
+			return false;
+		} catch (Exception e) {
+			System.out.println("CPF inválido");
+			return false;
+		}
+	}
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import br.com.bancoNext.beans.Cartao;
 import br.com.bancoNext.beans.Conta;
 import br.com.bancoNext.beans.Pix;
 
@@ -19,6 +20,25 @@ public class BancoDeDados {
 			System.out.println("Conta não encontrada");
 		}
 		return conta;
+	}
+
+	public static Conta buscaContaPorCartao(String numero) {
+
+		for (Map.Entry<String, Conta> mapaConta : BancoDeDados.BANCO_DE_DADOS.entrySet()) {
+			Conta conta = mapaConta.getValue();
+
+			List<Cartao> lCartao = conta.getCartoes();
+
+			if (lCartao != null) {
+				for (Cartao cartao : lCartao) {
+					if (cartao.getNumero().equals(numero)) {
+						return conta;
+					}
+				}
+			}
+		}
+
+		return null;
 	}
 
 	public static void insereConta(String numConta, Conta conta) {
@@ -49,20 +69,20 @@ public class BancoDeDados {
 		}
 		return lConta;
 	}
-	
+
 	public static Conta buscarContaPorPix(String chave) {
-		
+
 		for (Map.Entry<String, Conta> mapaConta : BancoDeDados.BANCO_DE_DADOS.entrySet()) {
 			Conta conta = mapaConta.getValue();
-			
+
 			Pix pix = conta.getPix();
-			if(pix != null) {
-				if(pix.getChave().equals(chave)) {
+			if (pix != null) {
+				if (pix.getChave().equals(chave)) {
 					return conta;
 				}
 			}
 		}
-		
+
 		return null;
 	}
 
