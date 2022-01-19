@@ -31,7 +31,7 @@ public class Main {
 
 		// MENU COM OPÇÂO
 
-		while (opc != 13) {
+		while (opc != 14) {
 
 			menu.acessarMenu();
 			opc = Integer.parseInt(utils.lerConsole("Digite a opção desejada:  "));
@@ -130,19 +130,19 @@ public class Main {
 
 			// COBRAR TAXAS E RENDIMENTOS
 			case 5:
-				
+
 				numeroConta = utils.lerConsole("Digite a conta:  ");
 				conta = BancoDeDados.buscaContaPorNumero(numeroConta);
 
 				if (conta == null) {
 					continue;
 				}
-				
+
 				contaBo = new ContaBo(conta);
 				contaBo.creditoDebito(conta);
 
 				System.out.println("Taxas e rendimentos calculados com sucesso.");
-				
+
 				break;
 
 			// CADASTRAR PIX
@@ -252,10 +252,10 @@ public class Main {
 
 				System.out.println("");
 				menu.acessarMenuSimNao();
-				
+
 				int opcaoCartao = Integer.parseInt(utils.lerConsole("Digite a opção desejada:  "));
 				System.out.println("");
-				
+
 				if (opcaoCartao == 1) {
 
 					String numero = UUID.randomUUID().toString();
@@ -414,9 +414,10 @@ public class Main {
 
 								encontrouCartaoCredito = true;
 
-								double valorCompra = Double.parseDouble(utils.lerConsole("Digite o valor da compra: R$ "));
-								String compra = utils.lerConsole                        ("Digite o nome da compra : ");
-								String senhaUser = utils.lerConsole                     ("Digite sua senha        : ");
+								double valorCompra = Double
+										.parseDouble(utils.lerConsole("Digite o valor da compra: R$ "));
+								String compra = utils.lerConsole("Digite o nome da compra : ");
+								String senhaUser = utils.lerConsole("Digite sua senha        : ");
 
 								if (senhaUser.equals(cartao.getSenha())) {
 
@@ -470,8 +471,47 @@ public class Main {
 
 				break;
 
-			// SAIR
 			case 13:
+
+				numeroCartaoC = utils.lerConsole("Digite o número do cartão da conta:  ");
+				conta = BancoDeDados.buscaContaPorCartao(numeroCartaoC);
+
+				if (conta == null) {
+					System.out.println("Nenhum cartão encontrado.");
+					continue;
+				}
+
+				lCartaoC = conta.getCartoes();
+				if (lCartaoC != null) {
+					boolean encontrouCartaoCredito = false;
+					for (Cartao cartao : lCartaoC) {
+						encontrouCartaoCredito = true;
+
+						System.out.println("");
+						menu.acessarMenuSimNao();
+
+						int opcaoDesativar = Integer.parseInt(utils.lerConsole("Digite a opção desejada:  "));
+						System.out.println("");
+
+						if (opcaoDesativar == 1) {
+							contaBo = new ContaBo(conta);
+							cartao.setAtivo(false);
+							
+							System.out.println("Cartão desativado com sucesso.");
+						}
+						
+						
+					}
+
+					if (encontrouCartaoCredito == false) {
+						System.out.println("Cartão de crédito não encontrado.");
+					}
+				}
+
+				break;
+
+			// SAIR
+			case 14:
 
 				System.out.println("Obrigado por usar nossso console.");
 				utils.fechaConsole();

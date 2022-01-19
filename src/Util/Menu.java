@@ -20,7 +20,8 @@ public class Menu {
 		System.out.println("|       10- COMPRA COM DÉBITO         |");
 		System.out.println("|       11- COMPRA COM CRÉDITO        |");
 		System.out.println("|       12- MOSTRAR FATURA            |");
-		System.out.println("|       13- SAIR                      |");
+		System.out.println("|       13- DESATIVAR CARTÃO          |");
+		System.out.println("|       14- SAIR                      |");
 		System.out.println("|                                     |");
 		System.out.println("|-------------------------------------|");
 
