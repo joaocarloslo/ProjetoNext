@@ -130,14 +130,19 @@ public class Main {
 
 			// COBRAR TAXAS E RENDIMENTOS
 			case 5:
+				
+				numeroConta = utils.lerConsole("Digite a conta:  ");
+				conta = BancoDeDados.buscaContaPorNumero(numeroConta);
 
-				List<Conta> lConta1 = BancoDeDados.buscarTodasContas();
-
-				for (Conta conta1 : lConta1) {
-					contaBo = new ContaBo(conta1);
-					contaBo.creditoDebito();
+				if (conta == null) {
+					continue;
 				}
+				
+				contaBo = new ContaBo(conta);
+				contaBo.creditoDebito(conta);
 
+				System.out.println("Taxas e rendimentos calculados com sucesso.");
+				
 				break;
 
 			// CADASTRAR PIX

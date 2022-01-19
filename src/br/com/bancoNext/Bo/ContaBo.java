@@ -59,18 +59,19 @@ public class ContaBo {
 		return data;
 	}
 
-	public void creditoDebito() {
-
-		if (this.conta.getData().before(new Date())) {
+	public void creditoDebito(Conta conta) {
 
 			if (this.conta.getTipoConta() == TipoConta.corrente) {
 				double valor = this.conta.getSaldo();
-				valor -= valor * 0.45;
-
+				valor = (valor * 0.45) / 100;
+				this.conta.setSaldo(this.conta.getSaldo() - valor);
+				System.out.println("Foi descontado o valor de: R$ "+valor);
+				
 			} else {
 				double valor = this.conta.getSaldo();
-				valor += valor * 0.03;
-				this.depositar(valor);
+				valor = (valor * 0.03) / 100;
+				this.conta.setSaldo(this.conta.getSaldo() + valor);
+				System.out.println("Foi creditado o valor de: R$ "+valor);
 			}
 
 			Date data = this.adicionarMes();
@@ -78,7 +79,7 @@ public class ContaBo {
 			BancoDeDados.insereConta(this.conta.getNumConta(), this.conta);
 
 		}
-	}
+	
 
 	private Conta gerarConta(Cliente cliente, TipoConta tipoConta) {
 		Conta conta = new Conta();
